@@ -1,8 +1,10 @@
 import Navbar from "./Navbar";
 import { IoIosFlower } from "react-icons/io";
 import { useSidebar } from "../Components/SidebarContext";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate()
   const { isSidebarOpen, setIsSidebarOpen } = useSidebar();
   return (
     <>
@@ -12,7 +14,7 @@ function Home() {
         <div className="mt-20">
           <div className="flex justify-center sm:justify-start flex-wrap gap-14 sm:gap-6 md:gap-10 sm:gap-y-14 md:gap-y-16  lg:gap-5">
             {/* Card */}
-            <div className="bg-white rounded-xl shadow-lg min-h-14 w-60 sm:w-44 md:w-56 lg:w-56 xl:w-60 hover:shadow-xl transition pt-5 px-4">
+            <div onClick={()=> navigate('/service-provider')} className="bg-white cursor-pointer rounded-xl shadow-lg min-h-14 w-60 sm:w-44 md:w-56 lg:w-56 xl:w-60 hover:shadow-xl transition pt-5 px-4">
               {/* user img */}
               <div className="relative w-16 mx-auto">
                 <div className="h-16 w-16 overflow-hidden rounded-full absolute -top-14 ">
@@ -57,7 +59,7 @@ function Home() {
               {/* Boot Btn */}
               <button className="text-gray-500 font-medium text-sm text-center border-t-2 py-2 w-full mt-5 hover:bg-[#f5f4fd] hover:rounded-full ">BOOK NOW</button>
             </div>
-            <div className="bg-white rounded-xl shadow-lg min-h-14 w-60 sm:w-44 md:w-56 lg:w-56 xl:w-60  hover:shadow-xl transition pt-5 px-4">
+            <div onClick={()=> navigate('/service-provider')} className="bg-white cursor-pointer rounded-xl shadow-lg min-h-14 w-60 sm:w-44 md:w-56 lg:w-56 xl:w-60  hover:shadow-xl transition pt-5 px-4">
               {/* user img */}
               <div className="relative w-16 mx-auto">
                 <div className="h-16 w-16 overflow-hidden rounded-full absolute -top-14 ">
@@ -102,7 +104,7 @@ function Home() {
               {/* Boot Btn */}
               <button className="text-gray-500 font-medium text-sm text-center border-t-2 py-2 w-full mt-5 hover:bg-[#f5f4fd] hover:rounded-full ">BOOK NOW</button>
             </div>
-            <div className="bg-white rounded-xl shadow-lg min-h-14 w-60 sm:w-44 md:w-56 lg:w-56 xl:w-60 hover:shadow-xl transition pt-5 px-4">
+            <div onClick={()=> navigate('/service-provider')} className="bg-white rounded-xl cursor-pointer shadow-lg min-h-14 w-60 sm:w-44 md:w-56 lg:w-56 xl:w-60 hover:shadow-xl transition pt-5 px-4">
               {/* user img */}
               <div className="relative w-16 mx-auto">
                 <div className="h-16 w-16 overflow-hidden rounded-full absolute -top-14 ">

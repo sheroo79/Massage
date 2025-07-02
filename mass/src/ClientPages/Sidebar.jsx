@@ -21,9 +21,7 @@ function Sidebar({ menuItem = [] }) {
           />
         </div>
         <div
-          className={`sm:transform sm:-translate-y-52 lg:-translate-y-28 duration-300 ease-in-out ${
-            !isSidebarOpen && "opacity-0"
-          }`}
+          className={`sm:transform sm:-translate-y-52 lg:-translate-y-28 duration-300 ease-in-out`}
         >
           <ul className="list-none pt-5 p-4 text-center space-y-4 font-medium sm:w-full">
             {menuItem.map(({ path, label }) => (

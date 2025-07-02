@@ -13,6 +13,7 @@ import Dasboard from './AdminPages/Dashboard'
 import Calendar from "./AdminPages/Calendar";
 import Users from "./AdminPages/Users";
 import ServiceProviders from "./AdminPages/ServiceProviders";
+import SignIn from "./auth/SignIn";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
             <Route path="favorites" element={<Favorites />} />
             <Route path="service-provider" element={<SPDetails/>}/>
             {/* Auth */}
-            <Route path='signup' element={<SignUp/>}/>
+            <Route path='signUp' element={<SignUp/>}/>
+            <Route path='signIn' element={<SignIn/>}/>
           </Route>
             {/* Admin Layout*/}
             <Route path="/admin" element={<AdminLayout/>}>

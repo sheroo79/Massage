@@ -1,11 +1,11 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
     <>
     <div className="p-7 flex justify-center bg-[#F2F0FF] w-full">
-      <div class="flex flex-col justify-center  p-4">
-        <div class="max-w-md w-full mx-auto border bg-white border-gray-300 rounded-2xl p-8">
+      <div class="flex flex-col justify-center p-4 md:w-96">
+        <div class="w-full mx-auto border bg-white border-gray-300 rounded-2xl p-8">
           <div class="text-center mb-7">
             <h1 className="text-2xl font-bold">Sign Up</h1>
             <small className="text-gray-400">
@@ -84,7 +84,7 @@ function SignUp() {
                 >
                   I accept the{" "}
                   <a
-                    href="javascript:void(0);"
+                    
                     className="text-[#5e50bf] font-medium hover:underline ml-1"
                   >
                     Terms and Conditions
@@ -103,12 +103,12 @@ function SignUp() {
             </div>
             <p class="text-slate-600 text-sm mt-3 text-center">
               Already have an account?{" "}
-              <a
-                href="javascript:void(0);"
+              <Link
+                to="/signIn"
                 className="text-[#5e50bf] font-medium hover:underline ml-1"
               >
                 Login here
-              </a>
+              </Link>
             </p>
           </form>
         </div>
