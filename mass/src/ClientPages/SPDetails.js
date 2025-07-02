@@ -16,12 +16,12 @@ function SPDetails() {
     <>
       <div className="p-5 bg-[#F2F0FF] w-full">
         <Navbar />
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen w-full pt-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen w-full pt-10 gap-4">
           {/* left side */}
-          <div className="grid lg:grid-rows-2 ">
+          <div className="grid">
             <div className="relative">
               {/* close icon */}
-              <div className="absolute top-0 left-0 text-3xl cursor-pointer">
+              <div className="absolute top-0 left-0 text-3xl cursor-pointer md:hidden">
                 <IoMdClose />
               </div>
               {/* img and details */}
@@ -116,12 +116,12 @@ function SPDetails() {
           {/* right side */}
           <div className="grid gap-y-10">
             {/* contact section */}
-            <div className="px-5 space-y-2 gap-y-10">
+            <div className="space-y-2 gap-y-10 w-4/5">
               <div className="text-white rounded">
                 <h2 className="text-lg font-semibold mb-2 text-black text-lg">
                   Contacts
                 </h2>
-                <div className="bg-[#F5F3FF] rounded-xl text-black p-3 shadow w-2/3">
+                <div className="bg-[#F5F3FF] rounded-xl text-black p-3 shadow">
                   <p className="font-medium">Phone Number</p>
                   <small className="font-sans text-gray-500">
                     016 555 2345
@@ -132,7 +132,7 @@ function SPDetails() {
                 <h2 className="text-lg font-semibold mb-2 text-black text-lg">
                   Available Services
                 </h2>
-                <div className="bg-[#F5F3FF] rounded-xl text-black p-3 py-5 shadow w-4/5 relative">
+                <div className="bg-[#F5F3FF] rounded-xl text-black p-3 py-5 shadow relative">
                   <p className="font-medium">Swedish Massage - 1hr</p>
                   <span className="text-[#5E50BF] text-sm font-medium">
                     R980.00
@@ -148,9 +148,9 @@ function SPDetails() {
               </div>
             </div>
             {/* Massage details section */}
-            <div>
+            <div className="space-y-8 w-4/5 flex flex-col justify-center">
               <div className="text-white rounded">
-                <div className="bg-[#F5F3FF] rounded-xl text-black p-3 py-5 shadow w-4/5 relative">
+                <div className="bg-[#F5F3FF] rounded-xl text-black p-3 py-5 shadow relative">
                   <p className="font-medium">Deep Massage Tissue</p>
                   <span className="text-[#5E50BF] text-sm font-medium">
                     R980.00
@@ -165,7 +165,7 @@ function SPDetails() {
                 </div>
               </div>
               <div className="text-white rounded space-y-6">
-                <div className="bg-[#F5F3FF] rounded-xl text-black p-3 py-5 shadow w-4/5 relative">
+                <div className="bg-[#F5F3FF] rounded-xl text-black p-3 py-5 shadow relative">
                   <p className="font-medium">Deep Massage Tissue</p>
                   <span className="text-[#5E50BF] text-sm font-medium">
                     R980.00
@@ -178,11 +178,13 @@ function SPDetails() {
                     BOOK NOW
                   </button>
                 </div>
+              </div>
+              {/* Booking Date and Time */}
                 <div>
                   <label className="block text-[#1D2C4B] font-medium mb-1">
                     Booking Date and Time
                   </label>
-                  <div className="relative w-2/3 cursor-pointer">
+                  <div className="relative w-2/3 flex justify-center cursor-pointer">
                     <DatePicker
                       selected={startDate}
                       onChange={(date) => setStartDate(date)}
@@ -206,6 +208,13 @@ function SPDetails() {
                     />
                   </div>
                 </div>
+              <div className="flex justify-between w-full gap-2">
+                <button className="bg-transparent w-full text-[#5E50BF] border border-[#5E50BF] py-2 rounded-full rounded-tr-none font-medium">
+                  Cancel
+                </button>
+                <button className="bg-[#5E50BF] w-full py-2 rounded-full rounded-tr-none text-white font-medium">
+                  Confirm
+                </button>
               </div>
             </div>
           </div>
