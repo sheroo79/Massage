@@ -1,0 +1,108 @@
+/* From Uiverse.io by mrhyddenn */ 
+/* The switch - the box around the slider */
+.switch {
+ font-size: 17px;
+ position: relative;
+ display: inline-block;
+ width: 50px;
+ height: 27px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+ opacity: 1;
+ width: 0;
+ height: 0;
+}
+
+/* The slider */
+.slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0px;
+ background: #fff;
+ transition: .4s;
+ border-radius: 30px;
+ border: 1px solid #ccc;
+}
+
+.slider:before {
+ position: absolute;
+ content: "";
+ height: 1.4.4em;
+ width: 1.5em;
+ border-radius: 16px;
+ left: 1.2px;
+ top: 0;
+ bottom: 0;
+ background-color: white;
+ box-shadow: 0 2px 5px #999999;
+ transition: .4s;
+}
+
+input:checked + .slider {
+ background-color: #5E50BF;
+ border: 1px solid transparent;
+}
+
+input:checked + .slider:before {
+ transform: translateX(1.5em);
+}
+// /* Weekday headers (Sun, Mon, etc.) */
+.rbc-header {
+  background-color: #F1F4F9;
+  font-weight: bold;
+  padding: 10px 0;
+//   border-bottom: 1px solid #ddd;
+}
+
+// /* Individual day cells */
+// .rbc-date-cell {
+//   background-color: #fff;
+//   color: #444;
+//   text-align: center;
+//   font-size: 14px;
+// }
+
+// /* Time slots (e.g., 12:00 AM, 1:00 PM...) */
+// .rbc-time-gutter {
+//   background-color: #f1f1f1;
+//   font-size: 13px;
+//   color: #555;
+// }
+
+// /* Events */
+// .rbc-event {
+//   background-color: #1976d2;
+//   color: white;
+//   padding: 2px 4px;
+//   border-radius: 4px;
+//   font-size: 12px;
+// }
+
+// /* Toolbar ka overall container */
+// .rbc-toolbar {
+//   background-color: #f0f0f0; /* overall toolbar bg */
+//   padding: 10px;
+//   border-bottom: 1px solid #ccc;
+// }
+
+// /* Month, Week, Day buttons */
+// .rbc-btn-group button {
+//   background-color: #e0e0e0; /* default bg */
+//   border: 1px solid #999;
+//   color: #333;
+//   padding: 6px 12px;
+//   border-radius: 8px;
+//   cursor: pointer;
+// }
+
+// /* Selected view button (active one) */
+.rbc-btn-group button.rbc-active {
+  background-color: #5e50bf; /* active bg */
+  color: white;
+  cursor: pointer;
+}
