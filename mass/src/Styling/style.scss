@@ -1,11 +1,26 @@
 /* From Uiverse.io by mrhyddenn */ 
 /* The switch - the box around the slider */
+// booking full calculator
+.fc .fc-col-header-cell {
+  border-right: none !important;
+  border-left: none !important;
+}
+.fc .fc-scrollgrid {
+  border-radius: 7px;
+  overflow: hidden; /* Very important */
+}
+// .fc .fc-daygrid-day-frame {
+//   height: 110.11px !important;
+//   width: 143.9px !important;
+//   box-sizing: border-box; /* Ensure padding doesn't expand the box */
+// }
 .switch {
  font-size: 17px;
  position: relative;
  display: inline-block;
- width: 50px;
- height: 27px;
+ width: 44px;
+ height: 24px;
+ border-radius: 50px;
 }
 
 /* Hide default HTML checkbox */
@@ -25,18 +40,18 @@
  bottom: 0px;
  background: #fff;
  transition: .4s;
- border-radius: 30px;
+ border-radius: 50px;
  border: 1px solid #ccc;
 }
 
 .slider:before {
  position: absolute;
  content: "";
- height: 1.4.4em;
- width: 1.5em;
- border-radius: 16px;
- left: 1.2px;
- top: 0;
+ height: 20px;
+ width: 20px;
+ border-radius: 50px;
+ left: 0;
+ top: 0.5px;
  bottom: 0;
  background-color: white;
  box-shadow: 0 2px 5px #999999;
@@ -49,7 +64,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
- transform: translateX(1.5em);
+ transform: translateX(1.4em);
 }
 // /* Weekday headers (Sun, Mon, etc.) */
 .rbc-header {

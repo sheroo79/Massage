@@ -73,83 +73,98 @@ function Calendar() {
             </div>
           </div>
           <div>
-            <div className="max-w-5xl mx-auto p-4 bg-white rounded-xl">
-              <div className="flex justify-between items-center mb-4">
-                <small className="text-gray-400">Today</small>
-                <div className="flex justify-between items-center gap-3">
-                  <IoIosArrowBack
-                    onClick={handlePrev}
-                    className="cursor-pointer"
-                  />
-                  <h2 className="text-lg text-center font-semibold select-none">
-                    {currentTitle}
-                  </h2>
-                  <IoIosArrowForward
-                    onClick={handleNext}
-                    className="cursor-pointer"
-                  />
-                </div>
-                <div className="space-x-2 select-none">
-                  <button
-                    className={`px-3 py-1 rounded ${
-                      activeView === "dayGridMonth"
-                        ? "bg-purple-500 text-white"
-                        : "bg-white border"
-                    }`}
-                    onClick={() => handleViewChange("dayGridMonth")}
+            <div className="overflow-x-auto">
+              <div className="max-w-5xl mx-auto p-5 bg-white rounded-xl">
+                <div className="flex justify-between mb-7">
+                  <small className="text-[#0E1E40] font-semibold text-[13px]">
+                    Today
+                  </small>
+                  {/* prev and next arrow */}
+                  <div className="flex justify-between items-center gap-3 text-sm text-[#0E1E40]">
+                    <IoIosArrowBack
+                      onClick={handlePrev}
+                      className="cursor-pointer"
+                    />
+                    <h2 className="text-center font-bold font-Montserrat  select-none">
+                      {currentTitle}
+                    </h2>
+                    <IoIosArrowForward
+                      onClick={handleNext}
+                      className="cursor-pointer"
+                    />
+                  </div>
+                  {/* Button Group */}
+                  <div
+                    className="inline-flex rounded-xl shadow-sm"
+                    role="group"
                   >
-                    Month
-                  </button>
+                    <button
+                      type="button"
+                      className={`px-4 py-2 text-[11.18px] font-medium ${
+                        activeView === "timeGridDay"
+                          ? "bg-[#5E50BF] text-white"
+                          : "bg-white text-[#0E1E40]"
+                      } border border-gray-300 rounded-s-xl`}
+                      onClick={() => handleViewChange("timeGridDay")}
+                    >
+                      Day
+                    </button>
 
-                  <button
-                    className={`px-3 py-1 rounded ${
-                      activeView === "timeGridWeek"
-                        ? "bg-purple-500 text-white"
-                        : "bg-white border"
-                    }`}
-                    onClick={() => handleViewChange("timeGridWeek")}
-                  >
-                    Week
-                  </button>
+                    <button
+                      type="button"
+                      className={`px-4 py-2 text-[11.18px] font-medium ${
+                        activeView === "timeGridWeek"
+                          ? "bg-[#5E50BF] text-white"
+                          : "bg-white text-[#0E1E40]"
+                      } border-t border-b border-gray-300`}
+                      onClick={() => handleViewChange("timeGridWeek")}
+                    >
+                      Week
+                    </button>
 
-                  <button
-                    className={`px-3 py-1 rounded ${
-                      activeView === "timeGridDay"
-                        ? "bg-purple-500 text-white"
-                        : "bg-white border"
-                    }`}
-                    onClick={() => handleViewChange("timeGridDay")}
-                  >
-                    Day
-                  </button>
+                    <button
+                      type="button"
+                      className={`px-4 py-2 text-[11.18px] font-semibold font-Montserrat ${
+                        activeView === "dayGridMonth"
+                          ? "bg-[#5E50BF] text-white"
+                          : "bg-white text-[#0E1E40]"
+                      } border border-gray-300 rounded-e-xl`}
+                      onClick={() => handleViewChange("dayGridMonth")}
+                    >
+                      Month
+                    </button>
+                  </div>
                 </div>
+                <FullCalendar
+                  ref={calendarRef}
+                  plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                  initialView="dayGridMonth"
+                  initialDate="2024-10-01"
+                  headerToolbar={false}
+                  dayHeaderClassNames={() =>
+                    "bg-[#F1F4F9] text-gray-800 text-[13px] uppercase font-bold"
+                  }
+                  events={[
+                    {
+                      title: "Another Person",
+                      date: "2024-10-03",
+                      color: "#c4b5fd",
+                    },
+                    {
+                      title: "Weekend Festival",
+                      date: "2024-10-21",
+                      color: "#f472b6",
+                    },
+                    {
+                      title: "Some Booking",
+                      start: "2024-10-25",
+                      end: "2024-10-29",
+                      color: "#fcd34d",
+                    },
+                    { title: "Training", date: "2024-10-30", color: "#60a5fa" },
+                  ]}
+                />
               </div>
-              <FullCalendar
-                ref={calendarRef}
-                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-                initialView="dayGridMonth"
-                initialDate="2024-10-01"
-                headerToolbar={false}
-                events={[
-                  {
-                    title: "Another Person",
-                    date: "2024-10-03",
-                    color: "#c4b5fd",
-                  },
-                  {
-                    title: "Weekend Festival",
-                    date: "2024-10-21",
-                    color: "#f472b6",
-                  },
-                  {
-                    title: "Some Booking",
-                    start: "2024-10-25",
-                    end: "2024-10-29",
-                    color: "#fcd34d",
-                  },
-                  { title: "Training", date: "2024-10-30", color: "#60a5fa" },
-                ]}
-              />
             </div>
           </div>
         </div>

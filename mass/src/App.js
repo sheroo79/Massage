@@ -14,6 +14,7 @@ import Calendar from "./AdminPages/Calendar";
 import Users from "./AdminPages/Users";
 import ServiceProviders from "./AdminPages/ServiceProviders";
 import SignIn from "./auth/SignIn";
+import FilledDetails from "./ClientPages/FilledDetails";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="bookings" element={<Booking />} />
             <Route path="favorites" element={<Favorites />} />
             <Route path="service-provider" element={<SPDetails/>}/>
+              <Route path="filled-details" element={<FilledDetails/>}/>
             {/* Auth */}
             <Route path='signUp' element={<SignUp/>}/>
             <Route path='signIn' element={<SignIn/>}/>

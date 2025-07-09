@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poller: ['"Poller One"', 'cursive'],
+        montserrat: ['Montserrat', 'sans-serif'], 
+      },
+    },
   },
   plugins: [],
 }

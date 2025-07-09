@@ -1,119 +1,165 @@
 import { Link } from "react-router-dom";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { useState } from "react";
 
 function SignUp() {
+  const [formData, setFormData] = useState({
+    name: "",
+    birth: "",
+    email: "",
+    password: "",
+    cpassword: "",
+  });
+  const [error, setError] = useState({name:'',birth:'',email:'',password:'',cpassword:''});
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+    setError({})
+  };
+  const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const newErrors = {
+    name: formData.name.trim() === "" ? "Full name is required" : "",
+    birth: formData.birth.trim() === "" ? "Date of birth is required" : "",
+    email: formData.email.trim() === "" ? "Email is required" : "",
+    password: formData.password.trim() === "" ? "Password is required" : "",
+    cpassword: formData.cpassword.trim() === "" ? "Confirm password is required" : "",
+  };
+
+  setError(newErrors);
+
+  // Optional: Only proceed if no errors
+  const hasError = Object.values(newErrors).some((msg) => msg !== "");
+  if (!hasError) {
+    console.log("Form submitted", formData);
+  }
+};
+
+  console.log(error);
+  console.log(formData);
   return (
     <>
-    <div className="p-7 flex justify-center bg-[#F2F0FF] w-full">
-      <div class="flex flex-col justify-center p-4 md:w-96">
-        <div class="w-full mx-auto border bg-white border-gray-300 rounded-2xl p-8">
-          <div class="text-center mb-7">
-            <h1 className="text-2xl font-bold">Sign Up</h1>
-            <small className="text-gray-400">
-              Enter Your details to continue
-            </small>
-          </div>
+      <div className="p-7 flex justify-center bg-[#F2F0FF] w-full">
+        <div class="flex flex-col justify-center p-3 md:w-96 w-[440px]">
+          <div class="w-full mx-auto border bg-[#FAFAFA] border-gray-300 rounded-2xl p-8">
+            <div class="text-center mb-7">
+              <h1 className="text-3xl font-bold text-[#0E1E40] font-montserrat">
+                Sign Up
+              </h1>
+              <small className="text-[#858FAD] text-xs font-montserrat font-medium">
+                Enter Your details to continue
+              </small>
+            </div>
 
-          <form>
-            <div class="space-y-4">
-              <div>
-                <label class="text-slate-900 text-sm font-medium mb-2 block">
-                  Full Name
-                </label>
-                <input
-                  name="name"
-                  type="text"
-                  class="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div>
-                <label class="text-slate-900 text-sm font-medium mb-2 block">
-                  Date of Birth
-                </label>
-                <input
-                  name="birth"
-                  type="date"
-                  class="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
-                  placeholder="Jan, 12 1980"
-                />
-              </div>
-              <div>
-                <label class="text-slate-900 text-sm font-medium mb-2 block">
-                  Email
-                </label>
-                <input
-                  name="email"
-                  type="email"
-                  class="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
-                  placeholder="John@email.com"
-                />
-              </div>
-              <div>
-                <label class="text-slate-900 text-sm font-medium mb-2 block">
-                  Password
-                </label>
-                <input
-                  name="password"
-                  type="password"
-                  class="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
-                  placeholder="Enter password"
-                />
-              </div>
-              <div>
-                <label class="text-slate-900 text-sm font-medium mb-2 block">
-                  Confirm Password
-                </label>
-                <input
-                  name="cpassword"
-                  type="password"
-                  class="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
-                  placeholder="Enter confirm password"
-                />
+            <form onSubmit={handleSubmit}>
+              <div class="space-y-4">
+                <div>
+                  <label class="text-[#858FAD] text-xs font-montserrat font-semibold mb-2 block">
+                    Full Name
+                  </label>
+                  <input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    type="text"
+                    class="text-[#858FAD] bg-[#F3F2F8]  w-full h-[48px] text-sm px-4 py-3 rounded-xl outline-blue-500"
+                    placeholder="John Doe"
+                  />
+                  <p className="text-red-500 text-xs mt-1">{error.name}</p>
+                </div>
+                <div>
+                  <label class="text-[#858FAD] text-xs font-montserrat font-semibold mb-2 block">
+                    Date of Birth
+                  </label>
+                  <input
+                    name="birth"
+                    onChange={handleChange}
+                    value={formData.birth}
+                    type="date"
+                    class="text-[#858FAD] bg-[#F3F2F8]  w-full h-[48px] text-sm px-4 py-3 rounded-xl outline-blue-500"
+                    placeholder="Jan, 12 1980"
+                  />
+                  <p className="text-red-500 text-xs mt-1">{error.birth}</p>
+                </div>
+                <div>
+                  <label class="text-[#858FAD] text-xs font-montserrat font-semibold mb-2 block">
+                    Email
+                  </label>
+                  <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    type="email"
+                    class="text-[#858FAD] bg-[#F3F2F8]  w-full h-[48px] text-sm px-4 py-3 rounded-xl outline-blue-500"
+                    placeholder="John@email.com"
+                  />
+                  <p className="text-red-500 text-xs mt-1">{error.email}</p>
+                </div>
+                <div>
+                  <label class="text-[#858FAD] text-xs font-montserrat font-semibold mb-2 block">
+                    Password
+                  </label>
+                  <div className="relative">
+                    <input
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      type="password"
+                      class="text-[#858FAD] bg-[#F3F2F8]  w-full h-[48px] text-sm px-4 py-3 rounded-xl outline-blue-500"
+                      placeholder="Enter password"
+                    />
+                    <p className="text-red-500 text-xs mt-1">{error.password}</p>
+                    <div className="absolute top-4 right-3 text-[#858FAD] cursor-pointer">
+                      <FaRegEyeSlash />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label class="text-[#858FAD] text-xs font-montserrat font-semibold mb-2 block">
+                    Confirm Password
+                  </label>
+                  <div className="relative">
+                    <input
+                      name="cpassword"
+                      value={formData.cpassword}
+                      onChange={handleChange}
+                      type="password"
+                      class="text-[#858FAD] bg-[#F3F2F8]  w-full h-[48px] text-sm px-4 py-3 rounded-xl outline-blue-500"
+                      placeholder="Enter confirm password"
+                    />
+                    <p className="text-red-500 text-xs mt-1">{error.cpassword}</p>
+                    <div className="absolute top-4 right-3 text-[#858FAD] cursor-pointer">
+                      <FaRegEyeSlash />
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div class="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                />
-                <label
-                  for="remember-me"
-                  class="text-slate-600 ml-3 block text-sm"
+              <div class="mt-7">
+                <button
+                  type="submit"
+                  class="w-full py-3 px-4 text-sm tracking-wider font-semibold font-montserrat rounded-full rounded-tr-none text-white bg-[#5E50BF] focus:outline-none cursor-pointer"
                 >
-                  I accept the{" "}
-                  <a
-                    
-                    className="text-[#5e50bf] font-medium hover:underline ml-1"
-                  >
-                    Terms and Conditions
-                  </a>
-                </label>
+                  Sign up
+                </button>
               </div>
-            </div>
-
-            <div class="mt-5">
-              <button
-                type="button"
-                class="w-full py-3 px-4 text-sm tracking-wider font-medium rounded-full rounded-tr-none text-white bg-[#5e50bf] hover:bg-[#4e38db] focus:outline-none cursor-pointer"
-              >
-                Create an account
-              </button>
-            </div>
-            <p class="text-slate-600 text-sm mt-3 text-center">
-              Already have an account?{" "}
-              <Link
-                to="/signIn"
-                className="text-[#5e50bf] font-medium hover:underline ml-1"
-              >
-                Login here
-              </Link>
-            </p>
-          </form>
+              <p class="text-[#858FAD] text-xs font-montserrat font-medium mt-7 text-center">
+                Already have an account?
+                <br />
+                <Link
+                  to="/signIn"
+                  className="text-[#5e50bf] font-medium hover:underline ml-1"
+                >
+                  Sign in
+                </Link>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

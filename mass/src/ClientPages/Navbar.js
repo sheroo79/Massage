@@ -30,9 +30,9 @@ const Navbar = () => {
           </div>
           
         </div>
-        <div className="flex flex-wrap gap-5 justify-end items-center w-full hidden sm:flex">
-          <Link to='/signUp' className="font-medium sm:hidden lg:block">Sign Up</Link>
-          <Link to='/signIn' className="min-w-[11vw] py-2 bg-[#5e50bf] text-white text-center rounded hover:bg-[#4e38db] rounded-full rounded-tr-none">
+        <div className="flex flex-wrap gap-5 justify-end items-center w-full hidden sm:flex ">
+          <Link to='/signUp' className="font-medium sm:hidden lg:block text-base">Sign Up</Link>
+          <Link to='/signIn' className="min-w-[11vw] py-2 bg-[#5e50bf] text-white text-center text-base rounded hover:bg-[#4e38db] rounded-full rounded-tr-none">
             Sign in
           </Link>
         </div>

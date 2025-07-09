@@ -42,36 +42,34 @@ function ServiceProviders() {
             scrollbarWidth: "thin",
           }}
         >
-          <table className="min-w-full bg-white rounded-lg overflow-hidden shadow">
-            <thead className="bg-[#f3f4f6] text-gray-700 text-left">
+          <table className="w-full bg-white rounded-lg overflow-hidden shadow">
+            <thead className="bg-[#E8E9EE] text-[#0E1E40] text-[13px] font-bold font-montserrat text-left h-[64.96px]">
               <tr>
                 <th className="px-6 py-3">Name</th>
                 <th className="px-6 py-3">Email</th>
                 <th className="px-6 py-3">Mobile number</th>
                 <th className="px-6 py-3">Location</th>
-                <th className="px-6 py-3">NO.services</th>
+                <th className="px-6 py-3">No. Services</th>
                 <th className="px-6 py-3">Profile Status</th>
                 <th className="px-6 py-3">Update Status</th>
                 <th className="px-6 py-3">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200 text-sm text-gray-700">
+            <tbody className="divide-y divide-gray-200 text-xs text-[#0E1E40]">
               {/* Row 1 */}
-              <tr>
+              <tr className="h-[79.73px] font-normal font-montserrat">
                 <td className="px-6 py-4">Hansu Luu</td>
                 <td className="px-6 py-4">provider@gmail.com</td>
                 <td className="px-6 py-4">06423234213</td>
                 <td className="px-6 py-4">Brooklyn</td>
-                <td className="px-6 py-4 text-center">
-                  <span className="text-center">2</span>
-                </td>
+                <td className="px-6 py-4 text-center">2</td>
                 <td className="px-6 py-4">
-                  <span className="bg-[#02A847] text-white text-xs px-3 py-1 flex items-center justify-center min-w-12 rounded-full">
+                  <span className="bg-[#02A847] text-white text-xs px-3 py-1 flex items-center justify-center w-[102px] h-[30px] rounded-full">
                     Active
                   </span>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="bg-[#02A89D] text-white text-xs px-3 py-1 flex items-center justify-center min-w-12 rounded-full">
+                  <span className="bg-[#02A89D] text-white text-xs px-3 py-1 flex items-center justify-center w-[102px] h-[30px] rounded-full">
                     Approved
                   </span>
                 </td>
@@ -84,22 +82,21 @@ function ServiceProviders() {
                   </button>
                 </td>
               </tr>
+
               {/* Row 2 */}
-              <tr>
+              <tr className="h-[79.73px] font-normal font-montserrat">
                 <td className="px-6 py-4">Hansu Luu</td>
                 <td className="px-6 py-4">provider@gmail.com</td>
                 <td className="px-6 py-4">06423234213</td>
                 <td className="px-6 py-4">Brooklyn</td>
-                <td className="px-6 py-4 text-center">
-                  <span className="text-center">3</span>
-                </td>
+                <td className="px-6 py-4 text-center">3</td>
                 <td className="px-6 py-4">
-                  <span className="bg-[#FF9E58] text-white text-xs px-3 py-1 flex items-center justify-center min-w-12 rounded-full">
+                  <span className="bg-[#FF9E58] text-white text-xs px-3 py-1 flex items-center justify-center w-[102px] h-[30px] rounded-full">
                     Pending
                   </span>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="bg-[#5895FF] text-white text-xs px-3 py-1 flex items-center justify-center min-w-12 rounded-full">
+                  <span className="bg-[#5895FF] text-white text-xs px-3 py-1 flex items-center justify-center w-[102px] h-[30px] rounded-full">
                     Suspended
                   </span>
                 </td>

@@ -6,11 +6,13 @@ function Layout() {
     {label : 'Home', path : '/'},
     {label : 'Booking', path : '/bookings'},
     {label : 'Favorites', path : '/favorites'},
+    
   ]
+  const btnData = 'Become a service provider'
   return (
     <>
       <div className="flex">
-        <SideBar menuItem={clientData}/>
+        <SideBar menuItem={clientData} menuBtn={btnData}/>
         <Outlet />
       </div>
     </>
