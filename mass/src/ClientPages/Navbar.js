@@ -4,7 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useSidebar } from "../Components/SidebarContext";
 const Navbar = () => {
-  const { setIsSidebarOpen } = useSidebar();
+  const { setIsSidebarOpen } = useSidebar(false);
   return (
     <>
       <div
@@ -31,8 +31,8 @@ const Navbar = () => {
           
         </div>
         <div className="flex flex-wrap gap-5 justify-end items-center w-full hidden sm:flex ">
-          <Link to='/signUp' className="font-medium sm:hidden lg:block text-base">Sign Up</Link>
-          <Link to='/signIn' className="min-w-[11vw] py-2 bg-[#5e50bf] text-white text-center text-base rounded hover:bg-[#4e38db] rounded-full rounded-tr-none">
+          <Link to='/signUp' onClick={()=> setIsSidebarOpen(false)} className="font-medium sm:hidden lg:block text-base">Sign Up</Link>
+          <Link to='/signIn' onClick={()=> setIsSidebarOpen(false)} className="min-w-[11vw] py-2 bg-[#5e50bf] text-white text-center text-base rounded hover:bg-[#4e38db] rounded-full rounded-tr-none">
             Sign in
           </Link>
         </div>

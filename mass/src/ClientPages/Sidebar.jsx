@@ -10,7 +10,7 @@ function Sidebar({ menuItem = [],menuBtn = '' }) {
   return (
     <>
       <div
-        className={`max-h-screen min-h-screen relative sticky top-0 overflow-hidden bg-[#1f282d] text-white flex flex-col justify-between z-50 transition-[width] duration-300 ease-in-out
+        className={`max-h-screen min-h-screen relative sticky top-0 overflow-hidden bg-[#1f282d] text-white flex flex-col justify-between z-50
     ${isSidebarOpen ? "w-[277px]" : "w-0"}
     `}
       >

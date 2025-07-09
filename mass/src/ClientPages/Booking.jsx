@@ -2,17 +2,16 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import moment from "moment";
 import { useEffect, useRef, useState } from "react";
-import { momentLocalizer } from "react-big-calendar";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useSidebar } from "../Components/SidebarContext";
 import "../Styling/style.scss";
 import Navbar from "./Navbar";
 function Booking() {
   const calendarRef = useRef(null);
   const [activeView, setActiveView] = useState("dayGridMonth");
   const [currentTitle, setCurrentTitle] = useState("October 2024");
-  const localizer = momentLocalizer(moment);
+  const { isSidebarOpen} = useSidebar(false);
 
   const updateTitle = () => {
     const calendarApi = calendarRef.current.getApi();
@@ -45,7 +44,7 @@ function Booking() {
   }, []);
   return (
     <>
-      <div className="bg-[#DCDEE2] w-full p-5">
+      <div className={`bg-[#DCDEE2] p-5 ${isSidebarOpen ? 'w-full' : 'min-w-full'}`}>
         <Navbar />
         <div className="mt-8">
           <div className="max-w-5xl mx-auto p-5 bg-white rounded-xl">
