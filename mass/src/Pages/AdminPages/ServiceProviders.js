@@ -114,7 +114,7 @@ function ServiceProviders({ role }) {
             <thead className="bg-[#E8E9EE] text-[#0E1E40] text-[13px] font-bold font-montserrat text-left h-[64.96px]">
               <tr>
                 {headers.map((header, index) => (
-                  <th key={index} className="px-6 py-3">
+                  <th key={index} className="px-6 py-3 text-[13.46px] font-bold">
                     {header}
                   </th>
                 ))}
@@ -125,7 +125,7 @@ function ServiceProviders({ role }) {
                 ? adminData.map((item, index) => (
                     <tr
                       key={index}
-                      className="h-[79.73px] font-normal font-montserrat"
+                      className="h-[79.73px] font-normal font-montserrat text-[12px]"
                     >
                       <td className="px-6 py-4">{item.name}</td>
                       <td className="px-6 py-4">{item.email}</td>
@@ -155,7 +155,7 @@ function ServiceProviders({ role }) {
                 : spData.map((item, index) => (
                     <tr
                       key={index}
-                      className="h-[79.73px] font-normal font-montserrat"
+                      className="h-[79.73px] font-normal font-montserrat text-[12px]"
                     >
                       <td className="px-6 py-4">{item.title}</td>
                       <td className="px-6 py-4">
@@ -166,8 +166,8 @@ function ServiceProviders({ role }) {
                           {item.description}
                         </div>
                       </td>
-                      <td className="px-6 py-4">{item.price}</td>
-                      <td className="px-6 py-4 text-center">{item.duration}</td>
+                      <td className="px-6 py-4 text-[13.46px] font-semibold">{item.price}</td>
+                      <td className="px-6 py-4 text-center text-[13.46px] font-semibold">{item.duration}</td>
                       <td className="flex justify-center mt-8 -ml-8">
                         <div
                           className={`h-[19.23px] w-[19.23px] rounded-full`}
