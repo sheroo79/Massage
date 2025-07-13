@@ -108,7 +108,7 @@ function Home() {
   return (
     <>
       <div className="bg-[#F5F3FF] p-4 px-6 w-full">
-        <AdminNavbar />
+        <AdminNavbar name='Dashboard'/>
         <div className="grid lg:grid-cols-[65%_35%] mt-6">
           {/* left side */}
           <div>
@@ -171,7 +171,7 @@ function Home() {
               </ResponsiveContainer>
             </div>
             {/* today */}
-            <div className="px-3 mt-5 bg-white">
+            <div className="px-3 mt-5 bg-white rounded-lg">
               <h1 className="text-lg font-bold font-montserrat py-4 text-[#0E1E40]">
                 Today
               </h1>
@@ -220,12 +220,12 @@ function Home() {
             </div>
           </div>
           {/* Right side */}
-          <div className="bg-[#FAFAFA] rounded-lg p-3 px-4 shadow ml-4">
+          <div className="bg-[#FAFAFA] rounded-lg p-3 px-4 shadow-custom-purple ml-4">
             <h1 className="text-lg font-bold py-1 text-[#1D2C4B] font-montserrat">
               New Bookings
             </h1>
             <div className="flex flex-col gap-8">
-              <div className="rounded-3xl pt-6 flex flex-col gap-0.5 h-[146px] bg-[#FBFBFB]">
+              <div className="rounded-3xl pt-6 flex flex-col gap-0.5 h-[146px] bg-[#FFFFFF33] shadow-custom-purple">
                 <span className="font-semibold block pl-3 text-sm font-montserrat text-[#1D2C4B]">
                   Billy More, 24 Male
                 </span>
@@ -244,7 +244,7 @@ function Home() {
                   </span>
                 </div>
               </div>
-              <div className="rounded-3xl pt-6 flex flex-col gap-0.5 h-[146px] bg-[#FBFBFB]">
+              <div className="rounded-3xl pt-6 flex flex-col gap-0.5 h-[146px] bg-[#FFFFFF33] shadow-custom-purple">
                 <span className="font-semibold block pl-3 text-sm font-montserrat text-[#1D2C4B]">
                   Billy More, 24 Male
                 </span>
@@ -263,7 +263,7 @@ function Home() {
                   </span>
                 </div>
               </div>
-              <div className="rounded-3xl pt-6 flex flex-col gap-0.5 h-[146px] bg-[#FBFBFB]">
+              <div className="rounded-3xl pt-6 flex flex-col gap-0.5 h-[146px] bg-[#FFFFFF33] shadow-custom-purple">
                 <span className="font-semibold block pl-3 text-sm font-montserrat text-[#1D2C4B]">
                   Billy More, 24 Male
                 </span>
@@ -282,7 +282,7 @@ function Home() {
                   </span>
                 </div>
               </div>
-              <div className="rounded-3xl pt-6 flex flex-col gap-0.5 h-[146px] bg-[#FBFBFB]">
+              <div className="rounded-3xl pt-6 flex flex-col gap-0.5 h-[146px] bg-[#FFFFFF33] shadow-custom-purple">
                 <span className="font-semibold block pl-3 text-sm font-montserrat text-[#1D2C4B]">
                   Billy More, 24 Male
                 </span>

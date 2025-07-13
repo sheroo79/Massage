@@ -113,7 +113,7 @@ function SignUp() {
                 Don't have an account?
                 <br />
                 <Link
-                  to="/signIn"
+                  to="/signup"
                   className="text-[#5e50bf] font-medium hover:underline ml-1"
                 >
                   Sign up

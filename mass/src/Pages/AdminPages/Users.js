@@ -8,7 +8,7 @@ function Users() {
   return (
     <>
       <div className="bg-[#F5F3FF] p-4 w-full h-screen overflow-x-hidden">
-        <AdminNavbar />
+        <AdminNavbar name="Users"/>
         {/* Search */}
         <div
           className="flex items-center justify-between

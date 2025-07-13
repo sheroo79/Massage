@@ -1,13 +1,13 @@
 import { CiBellOn } from "react-icons/ci";
-import "../Styling/style.scss";
-import { useSidebar } from "../Components/SidebarContext";
+import '../../Styling/style.scss';
+import { useSidebar } from "../../Components/SidebarContext";
 import { FiSidebar } from "react-icons/fi";
 
-function AdminNavbar() {
+function AdminNavbar({name = ''}) {
     const { setIsSidebarOpen } = useSidebar()
   return (
     <>
-      <div className="flex justify-between h-[95px] items-center bg-white rounded-xl px-3">
+      <div className="flex justify-between h-[95px] items-center bg-[#FAFAFA] shadow-custom-purple rounded-3xl px-3">
         <div className="flex items-center gap-2">
           <div
             onClick={() => setIsSidebarOpen((prev) => !prev)}
@@ -15,7 +15,7 @@ function AdminNavbar() {
           >
             <FiSidebar />
           </div>
-          <h1 className="font-extrabold text-2xl text-[#1D2C4B]">Dashboard</h1>
+          <h1 className="font-extrabold text-2xl text-[#0E1E40] font-montserrat">{name}</h1>
         </div>
         <div className="p-4 flex items-center gap-3">
           <label className="switch">

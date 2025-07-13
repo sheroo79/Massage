@@ -7,7 +7,7 @@ function SPDetails() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="p-5 bg-[#F2F0FF] w-full">
+      <div className="p-5 bg-[#F2F0FF] w-full font-montserrat">
         <Navbar />
         <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen w-full pt-10 gap-4">
           {/* left side */}
@@ -126,12 +126,12 @@ function SPDetails() {
           {/* right side */}
           <div className="grid gap-y-10">
             {/* contact section */}
-            <div className="space-y-2 gap-y-10 w-4/5">
+            <div className="space-y-2 gap-y-10">
               <div className="text-white rounded mb-4">
                 <h2 className="text-lg font-semibold mb-2 text-[#0E1E40] text-lg">
                   Contacts
                 </h2>
-                <div className="bg-[#FFFFFF33] text-[#0E1E40] rounded-3xl p-4 shadow-[2px_4px_24px_0px_#5E50BF0D]">
+                <div className="bg-white/20 text-[#0E1E40] rounded-3xl p-4 shadow-custom-faint h-[80px] w-[425px]">
                   <p className="font-medium">Phone Number</p>
                   <small className="font-sans text-[#858FAD]">
                     016 555 2345
@@ -142,18 +142,18 @@ function SPDetails() {
                 <h2 className="text-lg font-semibold mb-2 text-[#0E1E40] text-lg">
                   Available services
                 </h2>
-                <div className="py-5 pb-7 relative bg-[#FFFFFF33] text-[#0E1E40] rounded-3xl p-4 shadow-[2px_4px_24px_0px_#5E50BF0D]">
-                  <p className="font-medium">Swedish Massage - 1hr</p>
+                <div className="py-5 pb-7 relative bg-white/20 text-[#0E1E40] rounded-3xl p-4 shadow-custom-faint h-[125px] w-[425px]">
+                  <p className="font-medium text-[14px]">Swedish Massage - 1hr</p>
                   <span className="text-[#5E50BF] text-sm font-medium">
                     R980.00
                   </span>
-                  <small className="font-sans text-[#858FAD] line-clamp-2">
+                  <small className="font-sans text-[#858FAD] text-[12px] font-normal line-clamp-2">
                     A relaxing massage using gentle techniques to soothe muscles
                     and improve circulation.
                   </small>
                   <button
                     onClick={() => navigate("/filled-details")}
-                    className="bg-[#5E50BF] w-[17vw] py-2 rounded-full rounded-tr-none absolute -bottom-4 right-0 text-white font-medium"
+                    className="bg-[#5E50BF] w-[212px] h-[44px] py-2 rounded-full rounded-tr-none absolute -bottom-4 right-0 text-white font-medium"
                   >
                     BOOK NOW
                   </button>
@@ -161,38 +161,38 @@ function SPDetails() {
               </div>
             </div>
             {/* Massage details section */}
-            <div className="space-y-8 w-4/5 flex flex-col justify-center">
+            <div className="space-y-8 w-4/5 flex flex-col justify-center -mt-20">
               <div className="text-white rounded">
-                <div className="bg-[#FFFFFF33] text-[#0E1E40] rounded-3xl p-4 shadow-[2px_4px_24px_0px_#5E50BF0D] py-5 shadow relative">
-                  <p className="font-medium">Deep Massage Tissue</p>
+                <div className="bg-white/20 text-[#0E1E40] rounded-3xl p-4 shadow-custom-faint py-5 shadow relative w-[425px] h-[126px]">
+                  <p className="font-medium text-[14px]">Deep Massage Tissue</p>
                   <span className="text-[#5E50BF] text-sm font-medium">
                     R980.00
                   </span>
-                  <small className="font-sans text-[#858FAD] line-clamp-2 pb-3">
+                  <small className="font-sans text-[#858FAD] line-clamp-2 pb-3 text-[12px]">
                     Focuses on realiging deeper layers of muscles and connective
                     tissue.
                   </small>
                   <button
                     onClick={() => navigate("/filled-details")}
-                    className="bg-[#5E50BF] w-[17vw] py-2 rounded-full rounded-tr-none absolute -bottom-4 right-0 text-white font-medium"
+                    className="bg-[#5E50BF] w-[212px] h-[44px] py-2 rounded-full rounded-tr-none absolute -bottom-4 right-0 text-white font-medium"
                   >
                     BOOK NOW
                   </button>
                 </div>
               </div>
               <div className="text-white rounded space-y-6">
-                <div className="bg-[#FFFFFF33] text-[#0E1E40] rounded-3xl p-4 shadow-[2px_4px_24px_0px_#5E50BF0D] py-5 shadow relative">
-                  <p className="font-medium">Deep Massage Tissue</p>
+                <div className="bg-white/20 text-[#0E1E40] rounded-3xl p-4 shadow-custom-faint py-5 shadow relative w-[425px] h-[126px]">
+                  <p className="font-medium text-[14px]">Deep Massage Tissue</p>
                   <span className="text-[#5E50BF] text-sm font-medium">
                     R980.00
                   </span>
-                  <small className="font-sans text-[#858FAD] line-clamp-2 pb-3">
+                  <small className="font-sans text-[#858FAD] line-clamp-2 pb-3 text-[12px]">
                     Focuses on realiging deeper layers of muscles and connective
                     tissue.
                   </small>
                   <button
                     onClick={() => navigate("/filled-details")}
-                    className="bg-[#5E50BF] w-[17vw] py-2 rounded-full rounded-tr-none absolute -bottom-4 right-0 text-white font-medium"
+                    className="bg-[#5E50BF] w-[212px] h-[44px] py-2 rounded-full rounded-tr-none absolute -bottom-4 right-0 text-white font-medium"
                   >
                     BOOK NOW
                   </button>

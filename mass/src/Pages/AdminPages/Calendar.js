@@ -6,11 +6,12 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { useEffect, useRef, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
-
+import { useSidebar } from "../../Components/SidebarContext";
 function Calendar() {
   const calendarRef = useRef(null);
   const [activeView, setActiveView] = useState("dayGridMonth");
   const [currentTitle, setCurrentTitle] = useState("October 2024");
+  const { isSidebarOpen } = useSidebar(false);
 
   const updateTitle = () => {
     const calendarApi = calendarRef.current.getApi();
@@ -44,14 +45,18 @@ function Calendar() {
   console.log(currentTitle);
   return (
     <>
-      <div className="bg-[#F5F3FF] p-4 w-full h-full">
-        <AdminNavbar />
-        <div className="grid md:grid-cols-[25%_75%] space-x-4 mt-6">
-          <div className="bg-white rounded-xl p-3">
-            <h2 className="text-md font-bold text-[#1D2C4B] select-none">
+      <div
+        className={`bg-[#F5F3FF] p-4 h-full ${
+          isSidebarOpen ? "w-full" : "min-w-full"
+        }`}
+      >
+        <AdminNavbar name="Calendar" />
+        <div className="grid md:grid-cols-[25%_75%] space-x-4 mt-6 font-montserrat">
+          <div className="bg-white rounded-xl p-3 h-full relative">
+            <h2 className="text-[18px] font-bold text-[#1D2C4B] select-none">
               Today
             </h2>
-            <div className="flex flex-col gap-5 mt-5">
+            <div className="flex flex-col gap-5 mt-5 relative">
               <div className="p-2 w-full rounded-xl border-l-[15px] border-l-[#EF2295] rounded-br-none bg-[#FDD6EB]">
                 <span className="block text-[#1D2C4B] text-sm font-medium">
                   Billy More, 24 Male
@@ -71,16 +76,19 @@ function Calendar() {
                 <small className="block">16:00 - 17:00</small>
               </div>
             </div>
+            <button className="bg-[#5E50BF] text-[16px] w-[260px] h-[51px] py-2 rounded-full rounded-tr-none absolute -bottom-6 right-0 text-white font-medium">
+              Add Booking
+            </button>
           </div>
           <div>
             <div className="overflow-x-auto">
-              <div className="max-w-5xl mx-auto p-5 bg-white rounded-xl">
-                <div className="flex justify-between mb-7">
+              <div className="max-w-5xl mx-auto p-5 bg-white rounded-xl font-montserrat">
+                <div className="flex justify-between mb-7 ">
                   <small className="text-[#0E1E40] font-semibold text-[13px]">
                     Today
                   </small>
                   {/* prev and next arrow */}
-                  <div className="flex justify-between items-center gap-3 text-sm text-[#0E1E40]">
+                  <div className="flex justify-between items-center gap-3 text-[18px] text-[#0E1E40]">
                     <IoIosArrowBack
                       onClick={handlePrev}
                       className="cursor-pointer"
@@ -95,7 +103,7 @@ function Calendar() {
                   </div>
                   {/* Button Group */}
                   <div
-                    className="inline-flex rounded-xl shadow-sm"
+                    className="inline-flex rounded-xl shadow-sm h-[37.97px] w-[178.29px]"
                     role="group"
                   >
                     <button
@@ -142,7 +150,7 @@ function Calendar() {
                   initialDate="2024-10-01"
                   headerToolbar={false}
                   dayHeaderClassNames={() =>
-                    "bg-[#F1F4F9] text-gray-800 text-[13px] uppercase font-bold"
+                    "bg-[#F1F4F9] text-gray-800 text-[13px] uppercase font-bold h-[45.57px] leading-10"
                   }
                   events={[
                     {
