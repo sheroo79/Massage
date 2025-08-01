@@ -41,3 +41,7 @@
     transform: rotate(360deg);
   }
 }
+.mini{
+  background-repeat: no-repeat;
+  background-color: #61dafb;
+}
